@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>
+        {% block title %}
+            Base
+        {% endblock %}
+    </title>
+</head>
+<body>
+
+<table border="1" width="100%">
+    <tr>
+        <td colspan="2">
+            <a href="{% url 'student_add' %}">Add Student</a><br>
+            <a href="{% url 'student_list' %}"> Students</a><br>
+            <a href="{% url 'prof_add' %}">Add Professor</a><br>
+            <a href="{% url 'prof_list' %}"> Professors</a><br>
+        </td>
+        <td colspan="7">
+            {% block content %}
+                Content
+            {% endblock %}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="9">Footer</td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'prof/parent.html' %}
+
+{% block title %}
+Professor Update
+{% endblock %}
+
+{% block content %}
+<h1>Update Professor</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <label>Name:</label>
+    <input type="text" name="name" value="{{ prof.name }}" required maxlength="200">
+    <br>
+    <label>Department:</label>
+    <input type="text" name="department" value="{{ prof.department }}" required maxlength="100">
+    <br>
+    <label>Rank:</label>
+    <input type="text" name="rank" value="{{ prof.rank }}" required maxlength="50">
+    <br>
+    <input type="submit" value="Update">
+</form>
+
+<div class="error">
+    {{ msg }}
+</div>
+{% endblock %}

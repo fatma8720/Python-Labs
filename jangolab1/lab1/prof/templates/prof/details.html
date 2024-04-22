@@ -1,0 +1,41 @@
+{% extends 'prof/parent.html' %}
+
+{% block title %}
+Professor Details
+{% endblock %}
+
+{% block content %}
+<h1>Professor Details</h1>
+
+<table>
+    <tr>
+        <td>
+            <label>Name:</label> {{ prof.name }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Registration Date:</label> {{ prof.registration_date }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Department:</label> {{ prof.department }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Rank:</label> {{ prof.rank }}
+        </td>
+    </tr>
+    {% if prof.image %}
+    <tr>
+        <td rowspan="3">
+             <label>Image:</label>
+             <img src="{{ prof.image }}" />
+        </td>
+    </tr>
+    {% endif %}
+</table>
+
+{% endblock %}

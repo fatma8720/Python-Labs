@@ -1,0 +1,33 @@
+{% extends 'prof/parent.html' %}
+
+{% block title %}
+Professor List
+{% endblock %}
+
+{% block content %}
+<h1>Professors</h1>
+
+<table border="1" width="100%">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Department</td>
+        <td>Rank</td>
+        <td>Actions</td>
+    </tr>
+    {% for prof in profs %}
+        <tr>
+            <td>{{ prof.id }}</td>
+            <td>{{ prof.name }}</td>
+            <td>{{ prof.department }}</td>
+            <td>{{ prof.rank }}</td>
+            <td>
+                <a href="{% url 'prof_details' prof.name %}">Show Details</a>
+                <a href="{% url 'prof_update' prof.id %}">Update</a>
+                <a href="{% url 'prof_delete' prof.id %}">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

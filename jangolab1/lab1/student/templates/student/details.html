@@ -1,0 +1,41 @@
+{% extends 'student/parent.html' %}
+
+{% block title %}
+Student Details
+{% endblock %}
+
+{% block content %}
+<h1>Student Details</h1>
+
+<table>
+    <tr>
+        <td>
+            <label>Name:</label> {{ student.name }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Registration Date:</label> {{ student.registration_date }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Course:</label> {{ student.course }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Year:</label> {{ student.year }}
+        </td>
+    </tr>
+    {% if student.image %}
+    <tr>
+        <td rowspan="3">
+             <label>Image:</label>
+             <img src="{{ student.image }}" />
+        </td>
+    </tr>
+    {% endif %}
+</table>
+
+{% endblock %}
